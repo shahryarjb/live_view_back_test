@@ -18,6 +18,7 @@ defmodule LiveViewBackWeb.Router do
     pipe_through :browser
 
     get "/", PageController, :home
+    live "/blog/:id", Blog.ArticleLive
   end
 
   # Other scopes may use custom stacks.

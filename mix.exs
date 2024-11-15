@@ -36,8 +36,8 @@ defmodule LiveViewBack.MixProject do
       {:phoenix_html, "~> 4.1"},
       {:phoenix_live_reload, "~> 1.2", only: :dev},
       # TODO bump on release to {:phoenix_live_view, "~> 1.0.0"},
-      {:phoenix_live_view, "~> 1.0.0-rc.1", override: true},
-      {:floki, ">= 0.30.0", only: :test},
+      {:phoenix_live_view, github: "phoenixframework/phoenix_live_view", branch: "main", override: true},
+      {:floki, ">= 0.30.0"},
       {:phoenix_live_dashboard, "~> 0.8.3"},
       {:esbuild, "~> 0.8", runtime: Mix.env() == :dev},
       {:tailwind, "~> 0.2", runtime: Mix.env() == :dev},
@@ -55,7 +55,13 @@ defmodule LiveViewBack.MixProject do
       {:gettext, "~> 0.20"},
       {:jason, "~> 1.2"},
       {:dns_cluster, "~> 0.1.1"},
-      {:bandit, "~> 1.5"}
+      {:bandit, "~> 1.5"},
+      {:makeup, "~> 1.1"},
+      {:makeup_eex, "~> 0.1.2"},
+      {:makeup_elixir, "~> 0.16.2"},
+      {:nimble_publisher, "~> 1.1"},
+      {:yaml_elixir, "~> 2.11"},
+      {:mdex, "~> 0.2"}
     ]
   end
 

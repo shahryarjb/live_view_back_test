@@ -1,0 +1,38 @@
+<article class="flex flex-col mt-5 max-w-5xl mx-auto px-5 leading-10 text-[#444444] dark:text-[#cacfd2]">
+  <h1 id="blog-h1" class="w-full text-center lg:text-4xl mt-5">
+    <%= @article.title %>
+  </h1>
+
+  <p class="w-full text-center text-sm text-[#444444] dark:text-[#dadbdc]">
+    <%= @article.headline %>
+  </p>
+
+  <section class="flex flex-row justify-center space-x-2 w-full text-center text-xs text-gray-500 italic mt-2">
+    <span><%= Calendar.strftime(@article.date, "%b %-d, %Y") %></span>
+    <span>/ <%= @article.read_time %> Mins Read</span>
+  </section>
+
+  <div class="flex flex-col gap-5 justify-center items-center my-10">
+    <div class="shrink-0">
+      <img
+        class="border-2 border-[#4f4f4f] rounded-full size-16"
+        src={~p"/images/#{@article.author["image"]}"}
+        alt={@article.author["full_name"]}
+      />
+    </div>
+
+    <div class="flex flex-col space-y-2 text-center justify-center items-center">
+      <h4 class="font-semibold text-sm"><%= @article.author["full_name"] %></h4>
+    </div>
+  </div>
+
+  <section class="flex flex-wrap items-center justify-center space-x-2 mb-5">
+    <span :for={tag <- @article.tags} variant="outline" color="silver" class="w-18">
+      <%= tag %>
+    </span>
+  </section>
+
+  <section class="mb-10">
+    <%= raw(@article.body) %>
+  </section>
+</article>
