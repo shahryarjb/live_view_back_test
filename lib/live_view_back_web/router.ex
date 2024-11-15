@@ -19,6 +19,7 @@ defmodule LiveViewBackWeb.Router do
 
     get "/", PageController, :home
     live "/blog/:id", Blog.ArticleLive
+    live "/doc/:id", Doc
   end
 
   # Other scopes may use custom stacks.
